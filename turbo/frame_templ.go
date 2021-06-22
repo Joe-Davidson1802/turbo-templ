@@ -5,7 +5,6 @@ package turbo
 import "github.com/a-h/templ"
 import "context"
 import "io"
-import "strconv"
 
 func TurboFrame(opts TurboFrameOptions) templ.Component {
 	return templ.ComponentFunc(func(ctx context.Context, w io.Writer) (err error) {
@@ -61,22 +60,6 @@ func TurboFrame(opts TurboFrameOptions) templ.Component {
 		if err != nil {
 			return err
 		}
-		_, err = io.WriteString(w, " disabled=")
-		if err != nil {
-			return err
-		}
-		_, err = io.WriteString(w, "\"")
-		if err != nil {
-			return err
-		}
-		_, err = io.WriteString(w, templ.EscapeString(strconv.FormatBool(opts.Disabled)))
-		if err != nil {
-			return err
-		}
-		_, err = io.WriteString(w, "\"")
-		if err != nil {
-			return err
-		}
 		_, err = io.WriteString(w, " target=")
 		if err != nil {
 			return err
@@ -86,22 +69,6 @@ func TurboFrame(opts TurboFrameOptions) templ.Component {
 			return err
 		}
 		_, err = io.WriteString(w, templ.EscapeString(opts.Target))
-		if err != nil {
-			return err
-		}
-		_, err = io.WriteString(w, "\"")
-		if err != nil {
-			return err
-		}
-		_, err = io.WriteString(w, " autoscroll=")
-		if err != nil {
-			return err
-		}
-		_, err = io.WriteString(w, "\"")
-		if err != nil {
-			return err
-		}
-		_, err = io.WriteString(w, templ.EscapeString(strconv.FormatBool(opts.Autoscroll)))
 		if err != nil {
 			return err
 		}

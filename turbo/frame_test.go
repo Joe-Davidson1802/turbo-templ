@@ -30,63 +30,49 @@ func TestTurboFrame(t *testing.T) {
 		{
 			name:     "TurboFrame: given default params should return skeleton frame",
 			input:    TurboFrameOptions{},
-			expected: `<turbo-frame id="" src="" loading="eager" disabled="false" target="" autoscroll="false"></turbo-frame>`,
+			expected: `<turbo-frame id="" src="" loading="eager" target=""></turbo-frame>`,
 		},
 		{
 			name: "TurboFrame: given an id should populate id",
 			input: TurboFrameOptions{
 				Id: "my-id",
 			},
-			expected: `<turbo-frame id="my-id" src="" loading="eager" disabled="false" target="" autoscroll="false"></turbo-frame>`,
+			expected: `<turbo-frame id="my-id" src="" loading="eager" target=""></turbo-frame>`,
 		},
 		// {
 		// 	name: "TurboFrame: given a url should populate url",
 		// 	input: TurboFrameOptions{
 		// 		Src: "https://my.website.example/with/a/path?and=some&query=params",
 		// 	},
-		// 	expected: `<turbo-frame id="" src="https://my.website.example/with/a/path?and=some&query=params" loading="eager" disabled="false" target="" autoscroll="false"></turbo-frame>`,
+		// 	expected: `<turbo-frame id="" src="https://my.website.example/with/a/path?and=some&query=params" loading="eager" target=""></turbo-frame>`,
 		// },
 		{
 			name: "TurboFrame: given eager loading should render as eager",
 			input: TurboFrameOptions{
 				Loading: Eager,
 			},
-			expected: `<turbo-frame id="" src="" loading="eager" disabled="false" target="" autoscroll="false"></turbo-frame>`,
+			expected: `<turbo-frame id="" src="" loading="eager" target=""></turbo-frame>`,
 		},
 		{
 			name: "TurboFrame: given lazy loading should render as lazy",
 			input: TurboFrameOptions{
 				Loading: Lazy,
 			},
-			expected: `<turbo-frame id="" src="" loading="lazy" disabled="false" target="" autoscroll="false"></turbo-frame>`,
-		},
-		{
-			name: "TurboFrame: given disabled loading should render as disabled",
-			input: TurboFrameOptions{
-				Disabled: true,
-			},
-			expected: `<turbo-frame id="" src="" loading="eager" disabled="true" target="" autoscroll="false"></turbo-frame>`,
+			expected: `<turbo-frame id="" src="" loading="lazy" target=""></turbo-frame>`,
 		},
 		{
 			name: "TurboFrame: given target set should render target",
 			input: TurboFrameOptions{
 				Target: "a-target",
 			},
-			expected: `<turbo-frame id="" src="" loading="eager" disabled="false" target="a-target" autoscroll="false"></turbo-frame>`,
-		},
-		{
-			name: "TurboFrame: given autoscroll set should render autoscroll",
-			input: TurboFrameOptions{
-				Autoscroll: true,
-			},
-			expected: `<turbo-frame id="" src="" loading="eager" disabled="false" target="" autoscroll="true"></turbo-frame>`,
+			expected: `<turbo-frame id="" src="" loading="eager" target="a-target"></turbo-frame>`,
 		},
 		{
 			name: "TurboFrame: given a child component should render child component",
 			input: TurboFrameOptions{
 				Contents: testChildComponent("Test Child"),
 			},
-			expected: `<turbo-frame id="" src="" loading="eager" disabled="false" target="" autoscroll="false">` +
+			expected: `<turbo-frame id="" src="" loading="eager" target="">` +
 				`Test Child` +
 				`</turbo-frame>`,
 		},

@@ -17,13 +17,11 @@ func (lt LoadingType) String() string {
 }
 
 type TurboFrameOptions struct {
-	Id         string
-	Src        string
-	Loading    LoadingType
-	Disabled   bool
-	Target     string
-	Autoscroll bool
-	Contents   *templ.Component
+	Id       string
+	Src      string
+	Loading  LoadingType
+	Target   string
+	Contents *templ.Component
 }
 
 type ActionType int
