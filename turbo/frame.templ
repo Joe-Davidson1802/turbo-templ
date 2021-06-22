@@ -1,0 +1,18 @@
+{% package turbo %}
+
+{% import "strconv" %}
+
+{% templ TurboFrame(opts TurboFrameOptions) %}
+    <turbo-frame 
+        id={%= opts.Id %} 
+        src={%= opts.Src %} 
+        loading={%= opts.Loading.String() %}
+        disabled={%= strconv.FormatBool(opts.Disabled) %}
+        target={%= opts.Target %}
+        autoscroll={%= strconv.FormatBool(opts.Autoscroll) %}
+        >
+        {% if opts.Contents != nil %}
+            {%! (*opts.Contents) %}
+        {% endif %}
+    </turbo-frame>
+{% endtempl %}

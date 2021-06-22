@@ -1,0 +1,11 @@
+{% package turbo %}
+
+{% templ TurboStream(opts TurboStreamOptions) %}
+    <turbo-stream action={%= opts.Action.String() %} target={%= opts.Target %}>
+        {% if opts.Contents != nil %}
+            <template>
+                {%! (*opts.Contents) %}
+            </template>
+        {% endif %}
+    </turbo-stream>
+{% endtempl %}
