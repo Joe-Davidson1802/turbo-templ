@@ -39,13 +39,13 @@ func TestTurboFrame(t *testing.T) {
 			},
 			expected: `<turbo-frame id="my-id" src="" loading="eager" target=""></turbo-frame>`,
 		},
-		// {
-		// 	name: "TurboFrame: given a url should populate url",
-		// 	input: TurboFrameOptions{
-		// 		Src: "https://my.website.example/with/a/path?and=some&query=params",
-		// 	},
-		// 	expected: `<turbo-frame id="" src="https://my.website.example/with/a/path?and=some&query=params" loading="eager" target=""></turbo-frame>`,
-		// },
+		{
+			name: "TurboFrame: given a url should populate url",
+			input: TurboFrameOptions{
+				Src: "https://my.website.example/with/a/path?and=some&query=params",
+			},
+			expected: `<turbo-frame id="" src="https://my.website.example/with/a/path?and=some&amp;query=params" loading="eager" target=""></turbo-frame>`,
+		},
 		{
 			name: "TurboFrame: given eager loading should render as eager",
 			input: TurboFrameOptions{
