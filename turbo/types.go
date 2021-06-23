@@ -5,12 +5,12 @@ import "github.com/a-h/templ"
 type LoadingType int
 
 const (
-	Eager LoadingType = iota
-	Lazy
+	EagerLoading LoadingType = iota
+	LazyLoading
 )
 
 func (lt LoadingType) String() string {
-	if lt == Lazy {
+	if lt == LazyLoading {
 		return "lazy"
 	}
 	return "eager"
@@ -27,31 +27,31 @@ type TurboFrameOptions struct {
 type ActionType int
 
 const (
-	Unset ActionType = iota
-	After
-	Append
-	Before
-	Prepend
-	Remove
-	Replace
-	Update
+	UnsetAction ActionType = iota
+	AfterAction
+	AppendAction
+	BeforeAction
+	PrependAction
+	RemoveAction
+	ReplaceAction
+	UpdateAction
 )
 
 func (at ActionType) String() string {
 	switch at {
-	case After:
+	case AfterAction:
 		return "after"
-	case Append:
+	case AppendAction:
 		return "append"
-	case Before:
+	case BeforeAction:
 		return "before"
-	case Prepend:
+	case PrependAction:
 		return "prepend"
-	case Remove:
+	case RemoveAction:
 		return "remove"
-	case Replace:
+	case ReplaceAction:
 		return "replace"
-	case Update:
+	case UpdateAction:
 		return "update"
 	}
 	return ""

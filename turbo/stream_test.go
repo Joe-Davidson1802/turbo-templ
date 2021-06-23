@@ -35,7 +35,7 @@ func TestStream(t *testing.T) {
 		{
 			name: "TurboStream: given action should render action",
 			input: TurboStreamOptions{
-				Action: Replace,
+				Action: ReplaceAction,
 			},
 			expected: `<turbo-stream action="replace" target=""></turbo-stream>`,
 		},

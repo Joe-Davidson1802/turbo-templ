@@ -49,14 +49,14 @@ func TestTurboFrame(t *testing.T) {
 		{
 			name: "TurboFrame: given eager loading should render as eager",
 			input: TurboFrameOptions{
-				Loading: Eager,
+				Loading: EagerLoading,
 			},
 			expected: `<turbo-frame id="" src="" loading="eager" target=""></turbo-frame>`,
 		},
 		{
 			name: "TurboFrame: given lazy loading should render as lazy",
 			input: TurboFrameOptions{
-				Loading: Lazy,
+				Loading: LazyLoading,
 			},
 			expected: `<turbo-frame id="" src="" loading="lazy" target=""></turbo-frame>`,
 		},
